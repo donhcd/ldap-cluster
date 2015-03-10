@@ -12,6 +12,7 @@ MAINTAINER Brian Bland, brian.bland@docker.com
 
 # Update to last version
 RUN yum -y update && yum -y install openldap-servers openldap-clients; yum clean all
+RUN yum -y install openssl
 
 # Default password is Welcome0 
 RUN echo 'olcRootPW: {SSHA}pa84PIkgQ48nqq6gg19ER2Z3LAoMFE3Z' >> '/etc/openldap/slapd.d/cn=config/olcDatabase={2}bdb.ldif' && \
